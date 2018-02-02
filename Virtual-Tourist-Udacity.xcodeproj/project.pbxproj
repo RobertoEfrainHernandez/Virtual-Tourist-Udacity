@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570ADA1C20250A1D00ED1E69 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570ADA1B20250A1D00ED1E69 /* CoreDataStack.swift */; };
 		5717BD02202279E500E1C25B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717BD01202279E500E1C25B /* AppDelegate.swift */; };
 		5717BD04202279E500E1C25B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717BD03202279E500E1C25B /* ViewController.swift */; };
 		5717BD07202279E500E1C25B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5717BD05202279E500E1C25B /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		570ADA1B20250A1D00ED1E69 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		5717BCFE202279E500E1C25B /* Virtual-Tourist-Udacity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Virtual-Tourist-Udacity.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5717BD01202279E500E1C25B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5717BD03202279E500E1C25B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				5717BD57202305E000E1C25B /* Photo+CoreDataProperties.swift */,
 				5717BD58202305E000E1C25B /* Pin+CoreDataClass.swift */,
 				5717BD59202305E000E1C25B /* Pin+CoreDataProperties.swift */,
+				570ADA1B20250A1D00ED1E69 /* CoreDataStack.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				5717BD5C202305E000E1C25B /* Pin+CoreDataClass.swift in Sources */,
 				5717BD5B202305E000E1C25B /* Photo+CoreDataProperties.swift in Sources */,
 				5717BD02202279E500E1C25B /* AppDelegate.swift in Sources */,
+				570ADA1C20250A1D00ED1E69 /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
