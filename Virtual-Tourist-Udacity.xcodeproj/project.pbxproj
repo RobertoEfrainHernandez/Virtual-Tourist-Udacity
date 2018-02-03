@@ -11,6 +11,7 @@
 		570ADA24202555D300ED1E69 /* FlickrConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570ADA23202555D300ED1E69 /* FlickrConstants.swift */; };
 		570ADA26202557B600ED1E69 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570ADA25202557B600ED1E69 /* GCDBlackBox.swift */; };
 		570ADA282025581100ED1E69 /* HelperAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570ADA272025581100ED1E69 /* HelperAlert.swift */; };
+		570ADA2A20257F4B00ED1E69 /* FlickrClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570ADA2920257F4B00ED1E69 /* FlickrClient.swift */; };
 		5717BD02202279E500E1C25B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717BD01202279E500E1C25B /* AppDelegate.swift */; };
 		5717BD04202279E500E1C25B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717BD03202279E500E1C25B /* ViewController.swift */; };
 		5717BD07202279E500E1C25B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5717BD05202279E500E1C25B /* Main.storyboard */; };
@@ -19,7 +20,6 @@
 		5717BD17202279E600E1C25B /* Virtual_Tourist_UdacityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717BD16202279E600E1C25B /* Virtual_Tourist_UdacityTests.swift */; };
 		5717BD22202279E600E1C25B /* Virtual_Tourist_UdacityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717BD21202279E600E1C25B /* Virtual_Tourist_UdacityUITests.swift */; };
 		5717BD522023031A00E1C25B /* Virtual-Tourist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5717BD502023031A00E1C25B /* Virtual-Tourist.xcdatamodeld */; };
-		5717BD55202305C000E1C25B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5717BD54202305C000E1C25B /* Default-568h@2x.png */; };
 		5717BD5A202305E000E1C25B /* Photo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717BD56202305E000E1C25B /* Photo+CoreDataClass.swift */; };
 		5717BD5B202305E000E1C25B /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717BD57202305E000E1C25B /* Photo+CoreDataProperties.swift */; };
 		5717BD5C202305E000E1C25B /* Pin+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717BD58202305E000E1C25B /* Pin+CoreDataClass.swift */; };
@@ -48,6 +48,7 @@
 		570ADA23202555D300ED1E69 /* FlickrConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrConstants.swift; sourceTree = "<group>"; };
 		570ADA25202557B600ED1E69 /* GCDBlackBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		570ADA272025581100ED1E69 /* HelperAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperAlert.swift; sourceTree = "<group>"; };
+		570ADA2920257F4B00ED1E69 /* FlickrClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrClient.swift; sourceTree = "<group>"; };
 		5717BCFE202279E500E1C25B /* Virtual-Tourist-Udacity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Virtual-Tourist-Udacity.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5717BD01202279E500E1C25B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5717BD03202279E500E1C25B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,7 +63,6 @@
 		5717BD21202279E600E1C25B /* Virtual_Tourist_UdacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Virtual_Tourist_UdacityUITests.swift; sourceTree = "<group>"; };
 		5717BD23202279E600E1C25B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5717BD512023031A00E1C25B /* Virtual-Tourist.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Virtual-Tourist.xcdatamodel"; sourceTree = "<group>"; };
-		5717BD54202305C000E1C25B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5717BD56202305E000E1C25B /* Photo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5717BD57202305E000E1C25B /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5717BD58202305E000E1C25B /* Pin+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pin+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -97,7 +97,6 @@
 		5717BCF5202279E500E1C25B = {
 			isa = PBXGroup;
 			children = (
-				5717BD54202305C000E1C25B /* Default-568h@2x.png */,
 				5717BD00202279E500E1C25B /* Virtual-Tourist-Udacity */,
 				5717BD15202279E600E1C25B /* Virtual-Tourist-UdacityTests */,
 				5717BD20202279E600E1C25B /* Virtual-Tourist-UdacityUITests */,
@@ -172,6 +171,7 @@
 				5717BD59202305E000E1C25B /* Pin+CoreDataProperties.swift */,
 				570ADA1B20250A1D00ED1E69 /* CoreDataStack.swift */,
 				570ADA23202555D300ED1E69 /* FlickrConstants.swift */,
+				570ADA2920257F4B00ED1E69 /* FlickrClient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -295,7 +295,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5717BD0C202279E500E1C25B /* LaunchScreen.storyboard in Resources */,
-				5717BD55202305C000E1C25B /* Default-568h@2x.png in Resources */,
 				5717BD09202279E500E1C25B /* Assets.xcassets in Resources */,
 				5717BD07202279E500E1C25B /* Main.storyboard in Resources */,
 			);
@@ -333,6 +332,7 @@
 				5717BD02202279E500E1C25B /* AppDelegate.swift in Sources */,
 				570ADA282025581100ED1E69 /* HelperAlert.swift in Sources */,
 				570ADA1C20250A1D00ED1E69 /* CoreDataStack.swift in Sources */,
+				570ADA2A20257F4B00ED1E69 /* FlickrClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
