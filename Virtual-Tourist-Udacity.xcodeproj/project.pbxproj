@@ -24,6 +24,7 @@
 		5717BD5B202305E000E1C25B /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717BD57202305E000E1C25B /* Photo+CoreDataProperties.swift */; };
 		5717BD5C202305E000E1C25B /* Pin+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717BD58202305E000E1C25B /* Pin+CoreDataClass.swift */; };
 		5717BD5D202305E000E1C25B /* Pin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717BD59202305E000E1C25B /* Pin+CoreDataProperties.swift */; };
+		5764D7E4202916AD005FA233 /* FlickrClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764D7E3202916AD005FA233 /* FlickrClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		5717BD57202305E000E1C25B /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5717BD58202305E000E1C25B /* Pin+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pin+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5717BD59202305E000E1C25B /* Pin+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pin+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		5764D7E3202916AD005FA233 /* FlickrClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 				5717BD59202305E000E1C25B /* Pin+CoreDataProperties.swift */,
 				570ADA1B20250A1D00ED1E69 /* CoreDataStack.swift */,
 				570ADA23202555D300ED1E69 /* FlickrConstants.swift */,
+				5764D7E3202916AD005FA233 /* FlickrClient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				5717BD02202279E500E1C25B /* AppDelegate.swift in Sources */,
 				570ADA282025581100ED1E69 /* HelperAlert.swift in Sources */,
 				570ADA1C20250A1D00ED1E69 /* CoreDataStack.swift in Sources */,
+				5764D7E4202916AD005FA233 /* FlickrClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,7 +504,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W465KZUJR6;
-				INFOPLIST_FILE = "Virtual-Tourist-Udacity/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Virtual-Tourist-Udacity/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RobertoEfrainHernandez.Virtual-Tourist-Udacity";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -515,7 +519,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W465KZUJR6;
-				INFOPLIST_FILE = "Virtual-Tourist-Udacity/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Virtual-Tourist-Udacity/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RobertoEfrainHernandez.Virtual-Tourist-Udacity";
 				PRODUCT_NAME = "$(TARGET_NAME)";
