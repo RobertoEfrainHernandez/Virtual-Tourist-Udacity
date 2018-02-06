@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+
 // MARK: -- Flickr Constants
 /***************************************************************/
 

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TouristMapViewController.swift
 //  Virtual-Tourist-Udacity
 //
 //  Created by Roberto Hernandez on 1/31/18.
@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import ChameleonFramework
 
-class ViewController: UIViewController {
+class TouristMapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
