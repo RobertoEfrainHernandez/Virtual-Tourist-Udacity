@@ -13,13 +13,16 @@
         <!--Virtual Tourist VC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Virtual Tourist VC" customClass="ViewController" customModule="Virtual_Tourist_Udacity" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Virtual Tourist VC" customClass="TouristMapViewController" customModule="Virtual_Tourist_Udacity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LhM-1d-DGc">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="rRA-Cg-O8w"/>
+                                </connections>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap Pins to Delete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOx-Rv-x93">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
@@ -49,17 +52,20 @@
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="mrP-kX-Hm1"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="mrP-kX-Hm1" id="uJ0-6W-ZER"/>
+                        <outlet property="editLabel" destination="hOx-Rv-x93" id="JO9-3A-hUr"/>
+                        <outlet property="mapView" destination="LhM-1d-DGc" id="x2C-aX-cOx"/>
                         <segue destination="N3R-ok-xMy" kind="show" identifier="ShowPhotoAlbumVC" id="mmd-zb-DK8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="133.5832083958021"/>
+            <point key="canvasLocation" x="580" y="134"/>
         </scene>
         <!--Photo Album VC-->
         <scene sceneID="21P-hk-cNK">
             <objects>
-                <viewController id="N3R-ok-xMy" userLabel="Photo Album VC" sceneMemberID="viewController">
+                <viewController id="N3R-ok-xMy" userLabel="Photo Album VC" customClass="PhotoAlbumViewController" customModule="Virtual_Tourist_Udacity" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WCJ-0h-nwZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,42 +75,65 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="136" id="KqV-kg-3j3"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="N3R-ok-xMy" id="jLg-bO-mV8"/>
+                                </connections>
                             </mapView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DMs-Y1-jZa">
                                 <rect key="frame" x="0.0" y="208" width="375" height="412"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Xg-Db-mfP">
-                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="itemSize" width="375" height="180"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="flickrPhotoCell" id="dqM-0H-dLO">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="flickrPhotoCell" id="dqM-0H-dLO" customClass="PhotoAlbumCollectionViewCell" customModule="Virtual_Tourist_Udacity" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mmI-WN-WPM" userLabel="Flickr Photo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                </imageView>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Umy-ea-8dl">
-                                                    <rect key="frame" x="40" y="40" width="20" height="20"/>
-                                                </activityIndicatorView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHd-gE-Yvd" userLabel="Background View">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mmI-WN-WPM" userLabel="Flickr Photo">
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                                        </imageView>
+                                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Umy-ea-8dl">
+                                                            <rect key="frame" x="177" y="80" width="20" height="20"/>
+                                                        </activityIndicatorView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="mmI-WN-WPM" firstAttribute="top" secondItem="qHd-gE-Yvd" secondAttribute="top" id="Cvx-HS-jCL"/>
+                                                        <constraint firstItem="mmI-WN-WPM" firstAttribute="leading" secondItem="qHd-gE-Yvd" secondAttribute="leading" id="EHg-1x-d3G"/>
+                                                        <constraint firstAttribute="bottom" secondItem="mmI-WN-WPM" secondAttribute="bottom" id="Kg7-Ad-uQO"/>
+                                                        <constraint firstItem="Umy-ea-8dl" firstAttribute="centerY" secondItem="qHd-gE-Yvd" secondAttribute="centerY" id="mFQ-N4-aTs"/>
+                                                        <constraint firstAttribute="trailing" secondItem="mmI-WN-WPM" secondAttribute="trailing" id="rBT-ks-HuH"/>
+                                                        <constraint firstItem="Umy-ea-8dl" firstAttribute="centerX" secondItem="qHd-gE-Yvd" secondAttribute="centerX" id="rMF-h0-ll5"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="Umy-ea-8dl" firstAttribute="centerX" secondItem="dqM-0H-dLO" secondAttribute="centerX" id="2Rb-1s-Lhe"/>
-                                            <constraint firstItem="mmI-WN-WPM" firstAttribute="leading" secondItem="dqM-0H-dLO" secondAttribute="leading" id="dc4-ke-UjE"/>
-                                            <constraint firstItem="Umy-ea-8dl" firstAttribute="centerY" secondItem="dqM-0H-dLO" secondAttribute="centerY" id="jWK-Gu-8Ef"/>
-                                            <constraint firstAttribute="trailing" secondItem="mmI-WN-WPM" secondAttribute="trailing" id="kbs-f0-Boy"/>
-                                            <constraint firstAttribute="bottom" secondItem="mmI-WN-WPM" secondAttribute="bottom" id="rqv-XV-2aD"/>
-                                            <constraint firstItem="mmI-WN-WPM" firstAttribute="top" secondItem="dqM-0H-dLO" secondAttribute="top" id="udl-N7-11o"/>
+                                            <constraint firstAttribute="trailing" secondItem="qHd-gE-Yvd" secondAttribute="trailing" id="XAi-Za-jh2"/>
+                                            <constraint firstItem="qHd-gE-Yvd" firstAttribute="top" secondItem="dqM-0H-dLO" secondAttribute="top" id="ZHX-XY-8Rs"/>
+                                            <constraint firstItem="qHd-gE-Yvd" firstAttribute="leading" secondItem="dqM-0H-dLO" secondAttribute="leading" id="sxq-Ux-QsH"/>
+                                            <constraint firstAttribute="bottom" secondItem="qHd-gE-Yvd" secondAttribute="bottom" id="we9-pD-kj9"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="activityIndicator" destination="Umy-ea-8dl" id="srm-kg-MTq"/>
+                                            <outlet property="flickrImage" destination="mmI-WN-WPM" id="UhB-UR-dJX"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="N3R-ok-xMy" id="Jii-D8-UMa"/>
+                                    <outlet property="delegate" destination="N3R-ok-xMy" id="Hoq-50-s0Q"/>
+                                </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUg-ro-TLL">
                                 <rect key="frame" x="0.0" y="628" width="375" height="39"/>
@@ -132,10 +161,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zLy-1k-SbU"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionViewLayout" destination="3Xg-Db-mfP" id="fPH-vA-Ni3"/>
+                        <outlet property="flickrCollectionView" destination="DMs-Y1-jZa" id="ccV-GE-Qy2"/>
+                        <outlet property="mapView" destination="6r5-5r-R9q" id="aIh-Ok-DM8"/>
+                        <outlet property="newCollectionButton" destination="YUg-ro-TLL" id="qwa-jy-zXr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u2s-rV-DDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1287.2" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1482" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="o3G-f6-kr2">
