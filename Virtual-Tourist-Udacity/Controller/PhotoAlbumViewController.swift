@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import MapKit
 import CollectionViewSlantedLayout
+import ChameleonFramework
 
 // MARK: -- Photo Album View Controller
 /***************************************************************/
@@ -34,7 +35,11 @@ class PhotoAlbumViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        /* Set Collection Button Color */
+        newCollectionButton.backgroundColor = FlatTeal()
+        let contrastColor = ContrastColorOf(newCollectionButton.backgroundColor!, returnFlat: true)
+        newCollectionButton.setTitleColor(contrastColor, for: .normal)
+        
         /* Make First and Last cell not slanted when the view loads */
         collectionViewLayout.isFirstCellExcluded = true
         collectionViewLayout.isLastCellExcluded = true

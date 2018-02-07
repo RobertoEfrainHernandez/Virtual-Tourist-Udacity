@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import MapKit
+import ChameleonFramework
 
 // MARK: -- Tourist Map View Controller
 /***************************************************************/
@@ -25,14 +26,61 @@ class TouristMapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
         editLabel.isHidden = true
+        editLabel.backgroundColor = FlatTeal()
+        editLabel.textColor = ContrastColorOf(editLabel.backgroundColor!, returnFlat: true)
+        
+        /* Initialize Long Press Gesture Recognizer */
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(addPin(gestureRecognizer:)))
+        
+        longPress.minimumPressDuration = 0.8
+        mapView.addGestureRecognizer(longPress)
+        loadAnnotations()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func editPressed(_ sender: Any) {
+        editLabelVisible = !editLabelVisible
+        
+        if editLabelVisible {
+            editButton.title = "Done"
+            mapView.frame.origin.y -= 50
+            editLabel.isHidden = false
+        } else {
+            editButton.title = "Edit"
+            mapView.frame.origin.y = 0
+            editLabel.isHidden = true
+        }
     }
+    
+    @objc func addPin(gestureRecognizer: UILongPressGestureRecognizer) {
+        /* Add Pin when the Long Press Gesture state has began */
+        if gestureRecognizer.state == UIGestureRecognizerState.began {
+            
+            let location = gestureRecognizer.location(in: mapView)
+            let newCoordinates = mapView.convert(location, toCoordinateFrom: mapView)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = newCoordinates
+            
+            addedPinSaved(lat: newCoordinates.latitude, lon: newCoordinates.longitude)
+            
+            performUIUpdatesOnMain {
+                self.loadAnnotations()
+            }
+        }
+    }
+    
+    func addedPinSaved(lat: Double, lon: Double) {
+        let context = CoreDataStack.getContext()
+        let pin : Pin = NSEntityDescription.insertNewObject(forEntityName: "Pin", into: context) as! Pin
+        
+        pin.latitude = lat
+        pin.longitude = lon
+        
+        CoreDataStack.saveContext()
+    }
+    
 
     // MARK: -- Navigation
     /***************************************************************/
