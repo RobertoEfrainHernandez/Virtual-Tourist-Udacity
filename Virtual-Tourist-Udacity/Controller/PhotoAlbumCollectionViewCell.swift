@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import CollectionViewSlantedLayout
 
-let yOffsetSpeed: CGFloat = 150.0
+let yOffsetSpeed: CGFloat = 100.0
 let xOffsetSpeed: CGFloat = 100.0
 
 // MARK: -- Flickr Photo Album Cell
