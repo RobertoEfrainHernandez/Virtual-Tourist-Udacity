@@ -9,8 +9,9 @@
 import UIKit
 import Foundation
 import CollectionViewSlantedLayout
+import ChameleonFramework
 
-let yOffsetSpeed: CGFloat = 100.0
+let yOffsetSpeed: CGFloat = 150.0
 let xOffsetSpeed: CGFloat = 100.0
 
 // MARK: -- Flickr Photo Album Cell
@@ -29,7 +30,7 @@ class PhotoAlbumCollectionViewCell: CollectionViewSlantedCell {
         super.awakeFromNib()
         
         if let backgroundView = backgroundView {
-            gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
+            gradient.colors = [FlatSkyBlue(), FlatTeal()]
             gradient.locations = [0.0, 1.0]
             gradient.frame = backgroundView.bounds
             backgroundView.layer.addSublayer(gradient)

@@ -33,6 +33,7 @@ class PhotoAlbumViewController: UIViewController {
     var photosSelected = false
     var currentPage = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         /* Set Collection Button Color */
@@ -41,14 +42,15 @@ class PhotoAlbumViewController: UIViewController {
         newCollectionButton.setTitleColor(contrastColor, for: .normal)
         
         /* Make First and Last cell not slanted when the view loads */
-        //collectionViewLayout.isFirstCellExcluded = true
-        //collectionViewLayout.isLastCellExcluded = true
+        collectionViewLayout.isFirstCellExcluded = true
+        collectionViewLayout.isLastCellExcluded = true
         
-        flickrCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        flickrCollectionView.register(PhotoAlbumCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         addAnnotation()
         print("Selected pin location: \(selectedPin)")
         
         fetchPhotos()
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -65,7 +67,7 @@ class PhotoAlbumViewController: UIViewController {
                 self.displayAlert(title: "Unable to get photos from Flickr", message: error?.localizedDescription)
                 return
             }
-            // add results to photoData and reload collectionview
+            /* Add results to photoData and reload flickrCollectionView */
             performUIUpdatesOnMain {
                 if results != nil {
                     self.photoData = results!
@@ -176,10 +178,6 @@ extension PhotoAlbumViewController: UICollectionViewDataSource {
         
         let flickrCell = collectionView.dequeueReusableCell(withReuseIdentifier: "flickrPhotoCell", for: indexPath) as! PhotoAlbumCollectionViewCell
         
-        if let layout = collectionView.collectionViewLayout as? CollectionViewSlantedLayout {
-            flickrCell.contentView.transform = CGAffineTransform(rotationAngle: layout.slantingAngle)
-        }
-        
         let photo = photoData[indexPath.row]
         
         flickrCell.flickrImage.image = UIImage(named: "placeholder")
@@ -211,6 +209,10 @@ extension PhotoAlbumViewController: UICollectionViewDataSource {
         } else {
             flickrCell.flickrImage.alpha = 1.0
         }
+        
+        if let layout = collectionView.collectionViewLayout as? CollectionViewSlantedLayout {
+            flickrCell.contentView.transform = CGAffineTransform(rotationAngle: layout.slantingAngle)
+        }
     
         return flickrCell
     }
@@ -219,6 +221,7 @@ extension PhotoAlbumViewController: UICollectionViewDataSource {
 // MARK: -- CollectionView Slanted Layout Delegate Methods
 /***************************************************************/
 extension PhotoAlbumViewController: CollectionViewDelegateSlantedLayout {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //NSLog("Did select item at indexPath: [\(indexPath.section)][\(indexPath.row)]")
         let cell = collectionView.cellForItem(at: indexPath) as! PhotoAlbumCollectionViewCell
@@ -267,10 +270,4 @@ extension PhotoAlbumViewController: UIScrollViewDelegate {
             parallaxCell.offset(CGPoint(x: xOffset,y :yOffset))
         }
     }
-}
-
-// MARK: -- UIImageView Extention
-/***************************************************************/
-extension UIImageView {
-    
 }

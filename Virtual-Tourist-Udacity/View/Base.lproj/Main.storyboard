@@ -74,19 +74,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6r5-5r-R9q">
-                                <rect key="frame" x="0.0" y="64" width="375" height="136"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="136" id="KqV-kg-3j3"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="N3R-ok-xMy" id="jLg-bO-mV8"/>
-                                </connections>
-                            </mapView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DMs-Y1-jZa">
-                                <rect key="frame" x="0.0" y="208" width="375" height="412"/>
+                                <rect key="frame" x="0.0" y="272" width="375" height="345"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Xg-Db-mfP">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Xg-Db-mfP" customClass="CollectionViewSlantedLayout" customModule="CollectionViewSlantedLayout">
                                     <size key="itemSize" width="375" height="180"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -103,20 +94,19 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHd-gE-Yvd" userLabel="Background View">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mmI-WN-WPM" userLabel="Flickr Photo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mmI-WN-WPM" userLabel="Flickr Photo">
+                                                            <rect key="frame" x="-1" y="0.0" width="375" height="180"/>
                                                         </imageView>
                                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Umy-ea-8dl">
                                                             <rect key="frame" x="177" y="80" width="20" height="20"/>
                                                         </activityIndicatorView>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="mmI-WN-WPM" firstAttribute="top" secondItem="qHd-gE-Yvd" secondAttribute="top" id="Cvx-HS-jCL"/>
-                                                        <constraint firstItem="mmI-WN-WPM" firstAttribute="leading" secondItem="qHd-gE-Yvd" secondAttribute="leading" id="EHg-1x-d3G"/>
+                                                        <constraint firstItem="mmI-WN-WPM" firstAttribute="leading" secondItem="qHd-gE-Yvd" secondAttribute="leading" constant="-1" id="EHg-1x-d3G"/>
                                                         <constraint firstAttribute="bottom" secondItem="mmI-WN-WPM" secondAttribute="bottom" id="Kg7-Ad-uQO"/>
                                                         <constraint firstItem="Umy-ea-8dl" firstAttribute="centerY" secondItem="qHd-gE-Yvd" secondAttribute="centerY" id="mFQ-N4-aTs"/>
-                                                        <constraint firstAttribute="trailing" secondItem="mmI-WN-WPM" secondAttribute="trailing" id="rBT-ks-HuH"/>
+                                                        <constraint firstAttribute="trailing" secondItem="mmI-WN-WPM" secondAttribute="trailing" constant="1" id="rBT-ks-HuH"/>
                                                         <constraint firstItem="Umy-ea-8dl" firstAttribute="centerX" secondItem="qHd-gE-Yvd" secondAttribute="centerX" id="rMF-h0-ll5"/>
                                                     </constraints>
                                                 </view>
@@ -130,6 +120,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="activityIndicator" destination="Umy-ea-8dl" id="srm-kg-MTq"/>
+                                            <outlet property="backgroundView" destination="qHd-gE-Yvd" id="jvV-K1-cEg"/>
                                             <outlet property="flickrImage" destination="mmI-WN-WPM" id="UhB-UR-dJX"/>
                                         </connections>
                                     </collectionViewCell>
@@ -150,14 +141,23 @@
                                     <action selector="newCollectionTapped:" destination="N3R-ok-xMy" eventType="touchUpInside" id="Za9-j1-xDO"/>
                                 </connections>
                             </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6r5-5r-R9q">
+                                <rect key="frame" x="0.0" y="64" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="KqV-kg-3j3"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="N3R-ok-xMy" id="jLg-bO-mV8"/>
+                                </connections>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="YUg-ro-TLL" firstAttribute="top" secondItem="DMs-Y1-jZa" secondAttribute="bottom" constant="8" id="2Pk-3m-bLg"/>
+                            <constraint firstItem="YUg-ro-TLL" firstAttribute="top" secondItem="DMs-Y1-jZa" secondAttribute="bottom" constant="11" id="2Pk-3m-bLg"/>
                             <constraint firstItem="DMs-Y1-jZa" firstAttribute="top" secondItem="6r5-5r-R9q" secondAttribute="bottom" constant="8" id="8L8-as-GBr"/>
                             <constraint firstItem="6r5-5r-R9q" firstAttribute="trailing" secondItem="zLy-1k-SbU" secondAttribute="trailing" id="BMR-7V-tl0"/>
                             <constraint firstItem="DMs-Y1-jZa" firstAttribute="trailing" secondItem="zLy-1k-SbU" secondAttribute="trailing" id="E7j-Ks-oF7"/>
-                            <constraint firstItem="YUg-ro-TLL" firstAttribute="top" secondItem="DMs-Y1-jZa" secondAttribute="bottom" constant="8" id="HXI-ah-iPa"/>
+                            <constraint firstItem="YUg-ro-TLL" firstAttribute="top" secondItem="DMs-Y1-jZa" secondAttribute="bottom" constant="11" id="HXI-ah-iPa"/>
                             <constraint firstItem="6r5-5r-R9q" firstAttribute="leading" secondItem="zLy-1k-SbU" secondAttribute="leading" id="IOd-SQ-hZp"/>
                             <constraint firstItem="YUg-ro-TLL" firstAttribute="leading" secondItem="zLy-1k-SbU" secondAttribute="leading" id="Iw2-hQ-Dlh"/>
                             <constraint firstItem="6r5-5r-R9q" firstAttribute="top" secondItem="zLy-1k-SbU" secondAttribute="top" id="Njr-Bo-uEp"/>
