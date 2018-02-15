@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 import MapKit
-import CollectionViewSlantedLayout
 import ChameleonFramework
 
 // MARK: -- Photo Album View Controller
@@ -22,7 +21,7 @@ class PhotoAlbumViewController: UIViewController {
     /* Outlets */
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var flickrCollectionView: UICollectionView!
-    @IBOutlet weak var collectionViewLayout: CollectionViewSlantedLayout!
+    @IBOutlet weak var collectionViewLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var newCollectionButton: UIButton!
     
     /* Properties */
@@ -40,16 +39,25 @@ class PhotoAlbumViewController: UIViewController {
         newCollectionButton.backgroundColor = FlatTeal()
         let contrastColor = ContrastColorOf(newCollectionButton.backgroundColor!, returnFlat: true)
         newCollectionButton.setTitleColor(contrastColor, for: .normal)
-        
-        /* Make First and Last cell not slanted when the view loads */
-        collectionViewLayout.isFirstCellExcluded = true
-        collectionViewLayout.isLastCellExcluded = true
-        
-        flickrCollectionView.register(PhotoAlbumCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//
+//        /* Make First and Last cell not slanted when the view loads */
+//        collectionViewLayout.isFirstCellExcluded = true
+//        collectionViewLayout.isLastCellExcluded = true
+//
+        flickrCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         addAnnotation()
         print("Selected pin location: \(selectedPin)")
         
         fetchPhotos()
+        
+        /* MARK: Set spacing between items */
+        let space: CGFloat = 3.0
+        let viewWidth = self.view.frame.width
+        let dimension: CGFloat = (viewWidth-(2*space))/3.0
+        
+        collectionViewLayout.minimumInteritemSpacing = space
+        collectionViewLayout.minimumLineSpacing = space
+        collectionViewLayout.itemSize = CGSize(width: dimension, height: dimension)
         
     }
 
@@ -209,10 +217,10 @@ extension PhotoAlbumViewController: UICollectionViewDataSource {
         } else {
             flickrCell.flickrImage.alpha = 1.0
         }
-        
-        if let layout = collectionView.collectionViewLayout as? CollectionViewSlantedLayout {
-            flickrCell.contentView.transform = CGAffineTransform(rotationAngle: layout.slantingAngle)
-        }
+//
+//        if let layout = collectionView.collectionViewLayout as? CollectionViewSlantedLayout {
+//            flickrCell.contentView.transform = CGAffineTransform(rotationAngle: layout.slantingAngle)
+//        }
     
         return flickrCell
     }
@@ -220,7 +228,7 @@ extension PhotoAlbumViewController: UICollectionViewDataSource {
 
 // MARK: -- CollectionView Slanted Layout Delegate Methods
 /***************************************************************/
-extension PhotoAlbumViewController: CollectionViewDelegateSlantedLayout {
+extension PhotoAlbumViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //NSLog("Did select item at indexPath: [\(indexPath.section)][\(indexPath.row)]")
@@ -251,23 +259,24 @@ extension PhotoAlbumViewController: CollectionViewDelegateSlantedLayout {
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: CollectionViewSlantedLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGFloat {
-        return collectionViewLayout.scrollDirection == .vertical ? 180 : 325
-    }
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: CollectionViewSlantedLayout,
+//                        sizeForItemAt indexPath: IndexPath) -> CGFloat {
+//        return collectionViewLayout.scrollDirection == .vertical ? 180 : 325
+//    }
 }
 
-// MARK: -- Scroll View Delegate Extention
-/***************************************************************/
-extension PhotoAlbumViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard let collectionView = self.flickrCollectionView else {return}
-        guard let visibleCells = collectionView.visibleCells as? [PhotoAlbumCollectionViewCell] else {return}
-        for parallaxCell in visibleCells {
-            let yOffset = ((collectionView.contentOffset.y - parallaxCell.frame.origin.y) / parallaxCell.imageHeight) * yOffsetSpeed
-            let xOffset = ((collectionView.contentOffset.x - parallaxCell.frame.origin.x) / parallaxCell.imageWidth) * xOffsetSpeed
-            parallaxCell.offset(CGPoint(x: xOffset,y :yOffset))
-        }
-    }
-}
+//// MARK: -- Scroll View Delegate Extention
+///***************************************************************/
+//extension PhotoAlbumViewController: UIScrollViewDelegate {
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        guard let collectionView = self.flickrCollectionView else {return}
+//        guard let visibleCells = collectionView.visibleCells as? [PhotoAlbumCollectionViewCell] else {return}
+//        for parallaxCell in visibleCells {
+//            let yOffset = ((collectionView.contentOffset.y - parallaxCell.frame.origin.y) / parallaxCell.imageHeight) * yOffsetSpeed
+//            let xOffset = ((collectionView.contentOffset.x - parallaxCell.frame.origin.x) / parallaxCell.imageWidth) * xOffsetSpeed
+//            parallaxCell.offset(CGPoint(x: xOffset,y :yOffset))
+//        }
+//    }
+//}
+
