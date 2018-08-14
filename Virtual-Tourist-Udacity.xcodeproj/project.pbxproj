@@ -26,6 +26,9 @@
 		5717BD5D202305E000E1C25B /* Pin+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5717BD59202305E000E1C25B /* Pin+CoreDataProperties.swift */; };
 		572307AA202A455C0028243A /* PhotoAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572307A9202A455C0028243A /* PhotoAlbumViewController.swift */; };
 		572307AC202A459A0028243A /* PhotoAlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572307AB202A459A0028243A /* PhotoAlbumCollectionViewCell.swift */; };
+		572CACC8212362000068B9A0 /* Vacations in Phuket.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 572CACC7212362000068B9A0 /* Vacations in Phuket.ttf */; };
+		572CACC9212362000068B9A0 /* Vacations in Phuket.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 572CACC7212362000068B9A0 /* Vacations in Phuket.ttf */; };
+		572CACCA212362000068B9A0 /* Vacations in Phuket.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 572CACC7212362000068B9A0 /* Vacations in Phuket.ttf */; };
 		5764D7E4202916AD005FA233 /* FlickrClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5764D7E3202916AD005FA233 /* FlickrClient.swift */; };
 		969B640B0144666B4611084A /* Pods_Virtual_Tourist_Udacity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92960A7CFC222A9BFBFC39A1 /* Pods_Virtual_Tourist_Udacity.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +76,7 @@
 		5717BD59202305E000E1C25B /* Pin+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pin+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		572307A9202A455C0028243A /* PhotoAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumViewController.swift; sourceTree = "<group>"; };
 		572307AB202A459A0028243A /* PhotoAlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		572CACC7212362000068B9A0 /* Vacations in Phuket.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Vacations in Phuket.ttf"; sourceTree = "<group>"; };
 		5764D7E3202916AD005FA233 /* FlickrClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrClient.swift; sourceTree = "<group>"; };
 		585B322AA7C9E2F89B179B39 /* Pods-Virtual-Tourist-Udacity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Virtual-Tourist-Udacity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Virtual-Tourist-Udacity/Pods-Virtual-Tourist-Udacity.debug.xcconfig"; sourceTree = "<group>"; };
 		7B3618A28628B210C37320F6 /* Pods-Virtual-Tourist-Udacity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Virtual-Tourist-Udacity.release.xcconfig"; path = "Pods/Target Support Files/Pods-Virtual-Tourist-Udacity/Pods-Virtual-Tourist-Udacity.release.xcconfig"; sourceTree = "<group>"; };
@@ -195,12 +199,21 @@
 		5717BD532023038F00E1C25B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				572CACC6212361E10068B9A0 /* Font Resources */,
 				5717BD502023031A00E1C25B /* Virtual-Tourist.xcdatamodeld */,
 				5717BD0D202279E500E1C25B /* Info.plist */,
 				570ADA25202557B600ED1E69 /* GCDBlackBox.swift */,
 				570ADA272025581100ED1E69 /* HelperAlert.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		572CACC6212361E10068B9A0 /* Font Resources */ = {
+			isa = PBXGroup;
+			children = (
+				572CACC7212362000068B9A0 /* Vacations in Phuket.ttf */,
+			);
+			path = "Font Resources";
 			sourceTree = "<group>";
 		};
 		BD2A308CE04B368EF3FC7B14 /* Pods */ = {
@@ -232,7 +245,6 @@
 				5717BCFB202279E500E1C25B /* Frameworks */,
 				5717BCFC202279E500E1C25B /* Resources */,
 				9BACE42C79E37E9D0A7003E4 /* [CP] Embed Pods Frameworks */,
-				A15AF0D841C8B68A99C429D6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -286,20 +298,23 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Roberto Efrain Hernandez";
 				TargetAttributes = {
 					5717BCFD202279E500E1C25B = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 					5717BD11202279E600E1C25B = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 5717BCFD202279E500E1C25B;
 					};
 					5717BD1C202279E600E1C25B = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 5717BCFD202279E500E1C25B;
 					};
@@ -331,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5717BD0C202279E500E1C25B /* LaunchScreen.storyboard in Resources */,
+				572CACC8212362000068B9A0 /* Vacations in Phuket.ttf in Resources */,
 				5717BD55202305C000E1C25B /* Default-568h@2x.png in Resources */,
 				5717BD09202279E500E1C25B /* Assets.xcassets in Resources */,
 				5717BD07202279E500E1C25B /* Main.storyboard in Resources */,
@@ -341,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				572CACC9212362000068B9A0 /* Vacations in Phuket.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				572CACCA212362000068B9A0 /* Vacations in Phuket.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +382,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/CollectionViewSlantedLayout/CollectionViewSlantedLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -371,26 +390,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CollectionViewSlantedLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Virtual-Tourist-Udacity/Pods-Virtual-Tourist-Udacity-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A15AF0D841C8B68A99C429D6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Virtual-Tourist-Udacity/Pods-Virtual-Tourist-Udacity-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D217E1693036F93434960FFC /* [CP] Check Pods Manifest.lock */ = {
@@ -500,6 +505,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -507,6 +513,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -557,6 +564,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -564,6 +572,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -604,7 +613,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RobertoEfrainHernandez.Virtual-Tourist-Udacity";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -620,7 +629,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RobertoEfrainHernandez.Virtual-Tourist-Udacity";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -636,7 +645,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RobertoEfrainHernandez.Virtual-Tourist-UdacityTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Virtual-Tourist-Udacity.app/Virtual-Tourist-Udacity";
 			};
@@ -653,7 +662,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RobertoEfrainHernandez.Virtual-Tourist-UdacityTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Virtual-Tourist-Udacity.app/Virtual-Tourist-Udacity";
 			};
@@ -669,7 +678,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RobertoEfrainHernandez.Virtual-Tourist-UdacityUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Virtual-Tourist-Udacity";
 			};
@@ -685,7 +694,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RobertoEfrainHernandez.Virtual-Tourist-UdacityUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Virtual-Tourist-Udacity";
 			};

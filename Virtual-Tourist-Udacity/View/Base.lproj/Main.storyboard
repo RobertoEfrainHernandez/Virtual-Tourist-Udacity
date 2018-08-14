@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1rG-Bi-Hoa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1rG-Bi-Hoa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Vacations in Phuket.ttf">
+            <string>Vacations-in-Phuket</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Virtual Tourist VC-->
         <scene sceneID="tne-QT-ifu">
@@ -24,14 +29,13 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="rRA-Cg-O8w"/>
                                 </connections>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap Pins to Delete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOx-Rv-x93">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap Pins to Delete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOx-Rv-x93" customClass="DesignableLabel" customModule="Spring">
+                                <rect key="frame" x="10" y="607" width="355" height="50"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="3bM-Sk-lGe"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="YKa-R1-czb"/>
+                                    <constraint firstAttribute="height" constant="50" id="Aiw-iD-Bsm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="Vacations-in-Phuket" family="Vacations in Phuket" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -41,15 +45,16 @@
                             <constraint firstItem="LhM-1d-DGc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="0vV-1z-Wsu"/>
                             <constraint firstItem="LhM-1d-DGc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9aJ-EI-jXo"/>
                             <constraint firstItem="LhM-1d-DGc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9uN-Af-Fe7"/>
-                            <constraint firstItem="hOx-Rv-x93" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OFE-7r-wrk"/>
-                            <constraint firstItem="hOx-Rv-x93" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Pzx-qZ-hVp"/>
-                            <constraint firstItem="hOx-Rv-x93" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="sJf-fE-WtQ"/>
+                            <constraint firstItem="hOx-Rv-x93" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="eWs-Ps-d31"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hOx-Rv-x93" secondAttribute="bottom" constant="10" id="eyY-DU-n7e"/>
+                            <constraint firstItem="hOx-Rv-x93" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-10" id="nF3-JK-tWf"/>
                             <constraint firstItem="LhM-1d-DGc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xHi-lB-rZt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Virtual Tourist" id="T6o-wC-NyQ">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="mrP-kX-Hm1">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="editPressed:" destination="BYZ-38-t0r" id="yUO-hg-bC3"/>
                             </connections>
@@ -75,18 +80,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUg-ro-TLL">
-                                <rect key="frame" x="0.0" y="628" width="375" height="39"/>
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="Vacations-in-Phuket" family="Vacations in Phuket" pointSize="32"/>
                                 <state key="normal" title="New Collection">
-                                    <color key="titleColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.18198148906230927" green="0.69426733255386353" blue="0.53024792671203613" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="newCollectionTapped:" destination="N3R-ok-xMy" eventType="touchUpInside" id="4Ny-db-cdC"/>
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6r5-5r-R9q">
-                                <rect key="frame" x="0.0" y="64" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="wvM-gF-QHX"/>
                                 </constraints>
@@ -95,8 +100,8 @@
                                 </connections>
                             </mapView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DMs-Y1-jZa">
-                                <rect key="frame" x="0.0" y="275" width="375" height="345"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="327" width="375" height="288"/>
+                                <color key="backgroundColor" red="0.96470588239999999" green="0.93725490199999995" blue="0.70588235290000001" alpha="0.40346746579999998" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Xg-Db-mfP">
                                     <size key="itemSize" width="100" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -111,21 +116,64 @@
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mmI-WN-WPM" userLabel="Flickr Photo">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n6Z-Jc-2zc" userLabel="Cell View" customClass="DesignableView" customModule="Spring">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                </imageView>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OWJ-mM-kzc">
-                                                    <rect key="frame" x="40" y="40" width="20" height="20"/>
-                                                </activityIndicatorView>
+                                                    <subviews>
+                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ul9-Pc-l3S" userLabel="Inner View" customClass="DesignableView" customModule="Spring">
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mmI-WN-WPM" userLabel="Flickr Photo">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                                </imageView>
+                                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="OWJ-mM-kzc">
+                                                                    <rect key="frame" x="40" y="40" width="20" height="20"/>
+                                                                </activityIndicatorView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="OWJ-mM-kzc" firstAttribute="centerY" secondItem="Ul9-Pc-l3S" secondAttribute="centerY" id="5Zs-xh-ec8"/>
+                                                                <constraint firstItem="mmI-WN-WPM" firstAttribute="top" secondItem="Ul9-Pc-l3S" secondAttribute="top" id="9fg-XW-pUX"/>
+                                                                <constraint firstAttribute="trailing" secondItem="mmI-WN-WPM" secondAttribute="trailing" id="Cvz-5X-uad"/>
+                                                                <constraint firstItem="mmI-WN-WPM" firstAttribute="leading" secondItem="Ul9-Pc-l3S" secondAttribute="leading" id="dXZ-Vf-QfQ"/>
+                                                                <constraint firstItem="OWJ-mM-kzc" firstAttribute="centerX" secondItem="Ul9-Pc-l3S" secondAttribute="centerX" id="hIP-ac-Cel"/>
+                                                                <constraint firstAttribute="bottom" secondItem="mmI-WN-WPM" secondAttribute="bottom" id="kFk-lr-ydD"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="14"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="Ul9-Pc-l3S" secondAttribute="trailing" id="Nax-QW-cB7"/>
+                                                        <constraint firstItem="Ul9-Pc-l3S" firstAttribute="top" secondItem="n6Z-Jc-2zc" secondAttribute="top" id="Szx-ed-1nH"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Ul9-Pc-l3S" secondAttribute="bottom" id="bjq-dt-RoP"/>
+                                                        <constraint firstItem="Ul9-Pc-l3S" firstAttribute="leading" secondItem="n6Z-Jc-2zc" secondAttribute="leading" id="kEE-1k-iJm"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="14"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="0.25"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetY">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="mmI-WN-WPM" firstAttribute="leading" secondItem="dqM-0H-dLO" secondAttribute="leading" id="7Ff-a5-llJ"/>
-                                            <constraint firstItem="OWJ-mM-kzc" firstAttribute="centerX" secondItem="dqM-0H-dLO" secondAttribute="centerX" id="7eD-36-5s8"/>
-                                            <constraint firstAttribute="bottom" secondItem="mmI-WN-WPM" secondAttribute="bottom" id="Ywl-cr-xql"/>
-                                            <constraint firstItem="mmI-WN-WPM" firstAttribute="top" secondItem="dqM-0H-dLO" secondAttribute="top" id="boi-bF-E8l"/>
-                                            <constraint firstAttribute="trailing" secondItem="mmI-WN-WPM" secondAttribute="trailing" id="mP8-6h-Fxu"/>
-                                            <constraint firstItem="OWJ-mM-kzc" firstAttribute="centerY" secondItem="dqM-0H-dLO" secondAttribute="centerY" id="rma-9l-Kri"/>
+                                            <constraint firstItem="n6Z-Jc-2zc" firstAttribute="leading" secondItem="dqM-0H-dLO" secondAttribute="leading" id="6MO-b9-anM"/>
+                                            <constraint firstAttribute="bottom" secondItem="n6Z-Jc-2zc" secondAttribute="bottom" id="B0S-GI-bBd"/>
+                                            <constraint firstItem="n6Z-Jc-2zc" firstAttribute="top" secondItem="dqM-0H-dLO" secondAttribute="top" id="LpV-yS-Vjp"/>
+                                            <constraint firstAttribute="trailing" secondItem="n6Z-Jc-2zc" secondAttribute="trailing" id="PDA-cD-OP4"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="activityIndicator" destination="OWJ-mM-kzc" id="TZT-2X-Tgh"/>
@@ -140,6 +188,7 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DMs-Y1-jZa" firstAttribute="leading" secondItem="zLy-1k-SbU" secondAttribute="leading" id="13X-uF-1Zy"/>
                             <constraint firstItem="YUg-ro-TLL" firstAttribute="leading" secondItem="zLy-1k-SbU" secondAttribute="leading" id="260-NM-rs1"/>
@@ -172,9 +221,15 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1rG-Bi-Hoa" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Y4C-II-vII">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Y4C-II-vII">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.18998533487319946" green="0.35768887400627136" blue="0.43821841478347778" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Vacations-in-Phuket" family="Vacations in Phuket" pointSize="48"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

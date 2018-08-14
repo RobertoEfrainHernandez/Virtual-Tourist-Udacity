@@ -11,7 +11,7 @@ import CoreData
 import MapKit
 import ChameleonFramework
 
-// MARK: -- Photo Album View Controller
+// MARK:- Photo Album View Controller
 /***************************************************************/
 
 private let reuseIdentifier = "PhotoAlbumCell"
@@ -36,17 +36,13 @@ class PhotoAlbumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         /* Set Collection Button Color */
+        navigationController?.navigationItem.backBarButtonItem?.tintColor = .white
         newCollectionButton.backgroundColor = FlatTeal()
         let contrastColor = ContrastColorOf(newCollectionButton.backgroundColor!, returnFlat: true)
         newCollectionButton.setTitleColor(contrastColor, for: .normal)
-//
-//        /* Make First and Last cell not slanted when the view loads */
-//        collectionViewLayout.isFirstCellExcluded = true
-//        collectionViewLayout.isLastCellExcluded = true
-//
         flickrCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         addAnnotation()
-        print("Selected pin location: \(selectedPin)")
+        print("Selected pin location: \(String(describing: selectedPin))")
         
         fetchPhotos()
         
@@ -121,7 +117,7 @@ class PhotoAlbumViewController: UIViewController {
     
 }
 
-// MARK: -- MapView Delegate Methods
+// MARK:- MapView Delegate Methods
 /***************************************************************/
 extension PhotoAlbumViewController: MKMapViewDelegate {
     
@@ -133,7 +129,7 @@ extension PhotoAlbumViewController: MKMapViewDelegate {
         annotation.coordinate = coordinate
         
         //zoom into an appropriate region
-        let span = MKCoordinateSpanMake(0.25, 0.25)
+        let span = MKCoordinateSpan.init(latitudeDelta: 0.25, longitudeDelta: 0.25)
         let region = MKCoordinateRegion(center: coordinate, span: span)
         
         performUIUpdatesOnMain {
@@ -143,7 +139,7 @@ extension PhotoAlbumViewController: MKMapViewDelegate {
     }
 }
 
-// MARK: -- Fetch Results Delegate Methods
+// MARK:- Fetch Results Delegate Methods
 /***************************************************************/
 extension PhotoAlbumViewController: NSFetchedResultsControllerDelegate {
     
@@ -174,7 +170,7 @@ extension PhotoAlbumViewController: NSFetchedResultsControllerDelegate {
     }
 }
 
-// MARK: -- CollectionView Data Source Methods
+// MARK:- CollectionView Data Source Methods
 /***************************************************************/
 extension PhotoAlbumViewController: UICollectionViewDataSource {
     
@@ -217,10 +213,6 @@ extension PhotoAlbumViewController: UICollectionViewDataSource {
         } else {
             flickrCell.flickrImage.alpha = 1.0
         }
-//
-//        if let layout = collectionView.collectionViewLayout as? CollectionViewSlantedLayout {
-//            flickrCell.contentView.transform = CGAffineTransform(rotationAngle: layout.slantingAngle)
-//        }
     
         return flickrCell
     }
@@ -258,25 +250,5 @@ extension PhotoAlbumViewController: UICollectionViewDelegate {
             
         }
     }
-    
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: CollectionViewSlantedLayout,
-//                        sizeForItemAt indexPath: IndexPath) -> CGFloat {
-//        return collectionViewLayout.scrollDirection == .vertical ? 180 : 325
-//    }
 }
-
-//// MARK: -- Scroll View Delegate Extention
-///***************************************************************/
-//extension PhotoAlbumViewController: UIScrollViewDelegate {
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        guard let collectionView = self.flickrCollectionView else {return}
-//        guard let visibleCells = collectionView.visibleCells as? [PhotoAlbumCollectionViewCell] else {return}
-//        for parallaxCell in visibleCells {
-//            let yOffset = ((collectionView.contentOffset.y - parallaxCell.frame.origin.y) / parallaxCell.imageHeight) * yOffsetSpeed
-//            let xOffset = ((collectionView.contentOffset.x - parallaxCell.frame.origin.x) / parallaxCell.imageWidth) * xOffsetSpeed
-//            parallaxCell.offset(CGPoint(x: xOffset,y :yOffset))
-//        }
-//    }
-//}
 

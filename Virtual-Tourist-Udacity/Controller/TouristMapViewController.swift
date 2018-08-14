@@ -9,9 +9,10 @@
 import UIKit
 import CoreData
 import MapKit
+import Spring
 import ChameleonFramework
 
-// MARK: -- Tourist Map View Controller
+// MARK:- Tourist Map View Controller
 /***************************************************************/
 
 class TouristMapViewController: UIViewController {
@@ -34,7 +35,7 @@ class TouristMapViewController: UIViewController {
         /* Initialize Long Press Gesture Recognizer */
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(addPin(gestureRecognizer:)))
         
-        longPress.minimumPressDuration = 0.8
+        longPress.minimumPressDuration = 0.6
         mapView.addGestureRecognizer(longPress)
         loadAnnotations()
     }
@@ -47,16 +48,18 @@ class TouristMapViewController: UIViewController {
             editButton.title = "Done"
             mapView.frame.origin.y -= 50
             editLabel.isHidden = false
+            
         } else {
             editButton.title = "Edit"
             mapView.frame.origin.y = 0
             editLabel.isHidden = true
+            
         }
     }
     
     @objc func addPin(gestureRecognizer: UILongPressGestureRecognizer) {
         /* Add Pin when the Long Press Gesture state has began */
-        if gestureRecognizer.state == UIGestureRecognizerState.began {
+        if gestureRecognizer.state == UIGestureRecognizer.State.began {
             
             let location = gestureRecognizer.location(in: mapView)
             let newCoordinates = mapView.convert(location, toCoordinateFrom: mapView)
@@ -82,7 +85,7 @@ class TouristMapViewController: UIViewController {
     }
     
 
-    // MARK: -- Navigation
+    // MARK:- Navigation
     /***************************************************************/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -94,7 +97,7 @@ class TouristMapViewController: UIViewController {
     }
 }
 
-// MARK: -- Map View Delegate Methods
+// MARK:- Map View Delegate Methods
 /***************************************************************/
 extension TouristMapViewController: MKMapViewDelegate {
     
